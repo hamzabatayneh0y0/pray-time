@@ -72,7 +72,7 @@ else return [
 
     })
 
-console.log(localStorage.clear("all"))
+
 
 //local storage
 useEffect(()=>{
