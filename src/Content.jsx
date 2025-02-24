@@ -2,30 +2,74 @@ import { useEffect, useState } from "react"
 import Box from "./box"
 export default function Content(){
     let [click,setclick]=useState(false)
-    let [sug,setsug]=useState(()=>{let e=localStorage.getItem("all")
+    let [sug,setsug]=useState(()=>{
+        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
         e=JSON.parse(e);
-        return e.sug
+        return e.sug}
+else return []
     });
-    let [cun,setcun]=useState("")
-    let [date,setdate]=useState(()=>{let e=localStorage.getItem("all")
+    let [cun,setcun]=useState(()=>{
+        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
         e=JSON.parse(e);
-        return e.date
+        return e.cun}
+else return ""
     })
-    let [selectedCountry,setselectedCountry]=useState(()=>{let e=localStorage.getItem("all")
+    let [date,setdate]=useState(()=>{
+        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
         e=JSON.parse(e);
-        return e.selectedCountry
+        return e.date}
+else return ""
     })
-    let [load,setload]=useState(()=>{let e=localStorage.getItem("all")
+    let [selectedCountry,setselectedCountry]=useState(()=>{
+        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
         e=JSON.parse(e);
-        return e.load
+        return e.selectedCountry}
+else return ""
     })
-    let [timeleft,settimeleft]=useState(()=>{let e=localStorage.getItem("all")
+    let [load,setload]=useState(()=>{
+        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
         e=JSON.parse(e);
-        return e.timeleft
+        return e.load}
+else return false
     })
-    let [info,setinfo]=useState(()=>{let e=localStorage.getItem("all")
+    let [timeleft,settimeleft]=useState(()=>{
+        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
         e=JSON.parse(e);
-        return e.info
+        return e.timeleft}
+else return {hours: 0, minutes: 0, seconds: 0}
+    })
+    let [info,setinfo]=useState(()=>{
+        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
+        e=JSON.parse(e);
+        return e.info}
+else return [
+    {
+      "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
+      "pray": "Fajr",
+      "time": "06:03"
+    },
+    {
+      "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
+      "pray": "Dhuhr",
+      "time": "12:50"
+    },
+    {
+      "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
+      "pray": "Asr",
+      "time": "16:03"
+    },
+    {
+      "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
+      "pray": "Maghrib",
+      "time": "18:31"
+    },
+    {
+      "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
+      "pray": "Isha",
+      "time": "19:38"
+    }
+  ]
+
     })
 
 //local storage
