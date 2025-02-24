@@ -46,27 +46,27 @@ else return [
     {
       "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
       "pray": "Fajr",
-      "time": "06:03"
+      "time": "0"
     },
     {
       "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
       "pray": "Dhuhr",
-      "time": "12:50"
+      "time": "0"
     },
     {
       "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
       "pray": "Asr",
-      "time": "16:03"
+      "time": "0"
     },
     {
       "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
       "pray": "Maghrib",
-      "time": "18:31"
+      "time": "0"
     },
     {
       "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
       "pray": "Isha",
-      "time": "19:38"
+      "time": "0"
     }
   ]
 
