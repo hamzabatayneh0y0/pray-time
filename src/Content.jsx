@@ -83,7 +83,7 @@ return ()=>{clearTimeout(time)}
 },[selectedCountry,load,info,cun,sug,date,timeleft])
 async function getSug(){
     try{
-        let response=await fetch(`http://api.geonames.org/searchJSON?q=${cun}&maxRows=10&username=hamza0_0batayneh`)
+        let response=await fetch(`https://cors-anywhere.herokuapp.com/http://api.geonames.org/searchJSON?q=${cun}&maxRows=10&username=hamza0_0batayneh`)
     if (!response.ok){throw "feth error"}
     let data=await response.json()
    data=[...new Map(data.geonames.filter((el)=>el.adminName1!=="").map((el)=>{
