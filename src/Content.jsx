@@ -46,27 +46,27 @@ else return [
     {
       "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
       "pray": "Fajr",
-      "time": "0"
+      "time": ""
     },
     {
       "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
       "pray": "Dhuhr",
-      "time": "0"
+      "time": ""
     },
     {
       "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
       "pray": "Asr",
-      "time": "0"
+      "time": ""
     },
     {
       "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
       "pray": "Maghrib",
-      "time": "0"
+      "time": ""
     },
     {
       "src": "https://modo3.com/thumbs/fit630x300/160053/1494445557/%D9%81%D8%B6%D9%84_%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B5%D8%A8%D8%AD_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF.jpg",
       "pray": "Isha",
-      "time": "0"
+      "time": ""
     }
   ]
 
@@ -148,26 +148,32 @@ useEffect(()=>{
 },[selectedCountry])
 //set time left
 useEffect(()=>{
-let time=setInterval(() => {
-    let now=new Date()
-now= now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds(); 
-
-    let myprays=info.map((el)=>{let [h,m]=el.time.split(":").map(Number)
-        return h*3600+m*60
-     })
-    let mypray=myprays.find((el)=>{return el>now})
-  
+let y=info.some((el)=>{return el.time===""})
+if(!y){
+    let time=setInterval(() => {
+        let now=new Date()
+    now= now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds(); 
     
-    if (!mypray) {
-        mypray = myprays[0] + 24 * 3600; // Add 24 hours to loop to the next day
-    }
-let def=(mypray-now);
-let hours=Math.floor(def/(60*60))
-let minutes=Math.floor(def%(60*60)/(60))
-let seconds=Math.floor(def%(60))
-settimeleft({hours,minutes,seconds})
-}, 1000);
-    return ()=>{clearInterval(time)}
+        let myprays=info.map((el)=>{let [h,m]=el.time.split(":").map(Number)
+            return h*3600+m*60
+         })
+        let mypray=myprays.find((el)=>{return el>now})
+      
+        
+        if (!mypray) {
+            mypray = myprays[0] + 24 * 3600; // Add 24 hours to loop to the next day
+        }
+    let def=(mypray-now);
+    let hours=Math.floor(def/(60*60))
+    let minutes=Math.floor(def%(60*60)/(60))
+    let seconds=Math.floor(def%(60))
+    settimeleft({hours,minutes,seconds})
+    }, 1000);
+        return ()=>{clearInterval(time)}
+}
+else{
+    settimeleft({hours:0,minutes:0,seconds:0})
+}
 },[info])
 
     return (
