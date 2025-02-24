@@ -3,43 +3,43 @@ import Box from "./box"
 export default function Content(){
     let [click,setclick]=useState(false)
     let [sug,setsug]=useState(()=>{
-        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
+        if(localStorage.getItem("all")!==null){let e=localStorage.getItem("all")
         e=JSON.parse(e);
         return e.sug}
 else return []
     });
     let [cun,setcun]=useState(()=>{
-        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
+        if(localStorage.getItem("all")!==null){let e=localStorage.getItem("all")
         e=JSON.parse(e);
         return e.cun}
 else return ""
     })
     let [date,setdate]=useState(()=>{
-        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
+        if(localStorage.getItem("all")!==null){let e=localStorage.getItem("all")
         e=JSON.parse(e);
         return e.date}
 else return ""
     })
     let [selectedCountry,setselectedCountry]=useState(()=>{
-        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
+        if(localStorage.getItem("all")!==null){let e=localStorage.getItem("all")
         e=JSON.parse(e);
         return e.selectedCountry}
 else return ""
     })
     let [load,setload]=useState(()=>{
-        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
+        if(localStorage.getItem("all")!==null){let e=localStorage.getItem("all")
         e=JSON.parse(e);
         return e.load}
 else return false
     })
     let [timeleft,settimeleft]=useState(()=>{
-        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
+        if(localStorage.getItem("all")!==null){let e=localStorage.getItem("all")
         e=JSON.parse(e);
         return e.timeleft}
 else return {hours: 0, minutes: 0, seconds: 0}
     })
     let [info,setinfo]=useState(()=>{
-        if(localStorage.getItem("all")){let e=localStorage.getItem("all")
+        if(localStorage.getItem("all")!==null){let e=localStorage.getItem("all")
         e=JSON.parse(e);
         return e.info}
 else return [
@@ -71,6 +71,8 @@ else return [
   ]
 
     })
+
+console.log(localStorage.clear("all"))
 
 //local storage
 useEffect(()=>{
